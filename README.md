@@ -1,7 +1,7 @@
 # Detecting Deepfakes with Self-Blended Images
 ![Overview](overview.png)  
 The official PyTorch implementation for the following paper: 
-> [**Detecting Deepfakes with Self-Blended Images**](),  
+> [**Detecting Deepfakes with Self-Blended Images**](https://arxiv.org/abs/2204.08376),  
 > Kaede Shiohara and Toshihiko Yamasaki,  
 > *CVPR 2022 Oral*
 
