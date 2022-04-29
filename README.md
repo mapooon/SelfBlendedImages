@@ -5,6 +5,8 @@ The official PyTorch implementation for the following paper:
 > Kaede Shiohara and Toshihiko Yamasaki,  
 > *CVPR 2022 Oral*
 
+***2022.4.29: After discussions with the university's TLO, it was decided that the code would be licensed (free for research purposes only, with a fee for commercial use). Therefore it takes even more time to create the license. Thank you for your understanding.***
+
 ***2022.4.19: Due to some circumstances at our university, the code will be released after 2022.4.26. Please stay tuned.***
 
 <!-- 
