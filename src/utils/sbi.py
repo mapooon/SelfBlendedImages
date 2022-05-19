@@ -2,7 +2,7 @@
 # Yamasaki Lab at The University of Tokyo
 # shiohara@cvm.t.u-tokyo.ac.jp
 # Copyright (c) 2021
-# 3rd party softwares' licenses are noticed at https://github.com/mapooon/SelfBlendedImages/LICENSE
+# 3rd party softwares' licenses are noticed at https://github.com/mapooon/SelfBlendedImages/blob/master/LICENSE
 
 import torch
 from torchvision import datasets,transforms,utils

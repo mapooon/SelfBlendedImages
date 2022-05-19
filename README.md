@@ -10,7 +10,7 @@ The official PyTorch implementation for the following paper:
 Our code and pretrained model are freely available for research purpose.  
 For commercial use: 
 - A license agreement is required. 
-- See the [license](https://github.com/mapooon/SelfBlendedImages/LICENSE) for more details and contact the author [Kaede Shiohara](mailto:shiohara@cvm.t.u-tokyo.ac.jp).
+- See the [license](https://github.com/mapooon/SelfBlendedImages/blob/master/LICENSE) for more details and contact the author [Kaede Shiohara](mailto:shiohara@cvm.t.u-tokyo.ac.jp).
 
 
 # Recomended Development Environment
