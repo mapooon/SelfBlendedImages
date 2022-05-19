@@ -1,28 +1,11 @@
 
 .vscode/
 data/
-
-
-
 *.pyc
-#PyTorch
 *.pth
-
-#vsvode
-.vscode/
-
 *.tar
 *.dat
 *.txt
 *.h5
 
-output/
 
-
-#For pre-release
-dockerfiles/
-examples/
-src/
-weights/
-build.sh
-exec.sh
