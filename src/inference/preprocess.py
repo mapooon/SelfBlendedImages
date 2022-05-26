@@ -61,13 +61,13 @@ def extract_frames(filename,num_frames,model,image_size=(380,380)):
 
 	return croppedfaces,idx_list
 
-def extract_face(filename,model,image_size=(380,380)):
-	frame = np.array(Image.open(filename))
+def extract_face(frame,model,image_size=(380,380)):
+	
 	
 	faces = model.predict_jsons(frame)
 
 	if len(faces)==0:
-		print('No faces in {}'.format(filename))
+		print('No face is detected' )
 		return []
 
 	croppedfaces=[]

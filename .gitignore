@@ -1,6 +1,5 @@
 
 .vscode/
-data/
 *.pyc
 *.pth
 *.tar

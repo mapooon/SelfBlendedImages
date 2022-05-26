@@ -30,14 +30,17 @@ def main(args):
     model.load_state_dict(cnn_sd)
     model.eval()
 
-    face_detector = get_model("resnet50_2020-07-20", max_size=2048,device=device)
+    frame = cv2.imread(args.input_image)
+	frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+    face_detector = get_model("resnet50_2020-07-20", max_size=max(frame.shape),device=device)
     face_detector.eval()
 
-    face_list=extract_face(args.input_image,face_detector)
+    face_list=extract_face(frame,face_detector)
 
     with torch.no_grad():
         img=torch.tensor(face_list).to(device).float()/255
-        torchvision.utils.save_image(img, f'test.png', nrow=8, normalize=False, range=(0, 1))
+        # torchvision.utils.save_image(img, f'test.png', nrow=8, normalize=False, range=(0, 1))
         pred=model(img).softmax(1)[:,1].cpu().data.numpy().tolist()
 
     print(f'fakeness: {max(pred):.4f}')
