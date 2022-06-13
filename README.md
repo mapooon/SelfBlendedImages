@@ -124,12 +124,11 @@ Top five checkpoints will be saved in `./output/` folder. As descrived in our pa
 # Citation
 If you find our work useful for your research, please consider citing our paper:
 ```bibtex
-@misc{shiohara2022detecting,
-      title={Detecting Deepfakes with Self-Blended Images}, 
-      author={Kaede Shiohara and Toshihiko Yamasaki},
-      year={2022},
-      eprint={2204.08376},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@inproceedings{shiohara2022detecting,
+  title={Detecting Deepfakes with Self-Blended Images},
+  author={Shiohara, Kaede and Yamasaki, Toshihiko},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={18720--18729},
+  year={2022}
 }
 ```
