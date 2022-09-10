@@ -13,6 +13,13 @@ For commercial use:
 - See the [license](https://github.com/mapooon/SelfBlendedImages/blob/master/LICENSE) for more details and contact the author [Kaede Shiohara](mailto:shiohara@cvm.t.u-tokyo.ac.jp).
 
 
+# Changelog
+10.9.2022: Added a weight trained on c23 of FF++  
+
+19.5.2022: Released training/inference code and a pretrained weight.
+
+19.4.2022: Pre-released this repository
+
 # Recomended Development Environment
 * GPU: NVIDIA A100
 * CUDA: 11.1
@@ -42,8 +49,8 @@ For other datasets, please refer to `./data/datasets.md` .
 
 
 ## 2. Pretrained model
-We provide pretrained EfficientNet-B4.  
-Download [here](https://drive.google.com/file/d/12sLyqBp0VFwdpA-oZLdIOkOTkz_ZnIhV/view?usp=sharing) and place it in `./weights/` folder.
+We provide weights of EfficientNet-B4 trained on SBIs from FF-raw and FF-c23.  
+Download [[raw](https://drive.google.com/file/d/12sLyqBp0VFwdpA-oZLdIOkOTkz_ZnIhV/view?usp=sharing)][[c23](https://drive.google.com/file/d/1X0-NYT8KPursLZZdxduRQju6E52hauV0/view?usp=sharing)] and place it in `./weights/` folder.
 
 ## 3. Docker
 1. Replace the absolute path to this repository in `./exec.sh` .
@@ -58,28 +65,29 @@ bash exec.sh
 For example, run the inference on Celeb-DF-v2:
 ```bash
 CUDA_VISIBLE_DEVICES=* python3 src/inference/inference_dataset.py \
--w weights/sbi.tar \
+-w weights/FFraw.tar \
 -d CDF
 ```
 The result will be displayed.
 
 Using the provided pretrained model, our cross-dataset results are reproduced as follows:
 
-CDF | DFD | DFDC | DFDCP | FFIW
-:-: | :-: | :-: | :-: | :-:
-93.82% | 97.87% | 73.01% | 85.70% | 84.52%
+Training Data | CDF | DFD | DFDC | DFDCP | FFIW
+:-: | :-: | :-: | :-: | :-: | :-:
+FF-raw | 93.82% | 97.87% | 73.01% | 85.70% | 84.52%
+FF-c23 | 92.87% | 98.16% | 71.96% | 85.51% | 83.22%
 
 
 We also provide an inference code for video:
 ```bash
 CUDA_VISIBLE_DEVICES=* python3 src/inference/inference_video.py \
--w weights/sbi.tar \
+-w weights/FFraw.tar \
 -i /path/to/video.mp4
 ```
 and for image:
 ```bash
 CUDA_VISIBLE_DEVICES=* python3 src/inference/inference_image.py \
--w weights/sbi.tar \
+-w weights/FFraw.tar \
 -i /path/to/image.png
 ```
 
