@@ -9,38 +9,31 @@ import os
 import pandas as pd
 
 
-def init_ff(dataset,comp,phase,level='frame',n_frames=8):
-	if dataset=='Original':
-		dataset_path='data/FaceForensics++/original_sequences/youtube/{}/crop_dlib/'.format(comp)
-	else:
-		dataset_path='data/FaceForensics++/manipulated_sequences/{}/{}/crop_dlib/'.format(dataset,comp)
-	
+def init_ff(dataset='all',phase='test'):
+	assert dataset in ['all','Deepfakes','Face2Face','FaceSwap','NeuralTextures']
+	original_path='data/FaceForensics++/original_sequences/youtube/raw/videos/'
+	folder_list = sorted(glob(original_path+'*'))
 
-	image_list=[]
-	label_list=[]
-
-	
-	
-	folder_list = sorted(glob(dataset_path+'*'))
-	filelist = []
 	list_dict = json.load(open(f'data/FaceForensics++/{phase}.json','r'))
+	filelist=[]
 	for i in list_dict:
 		filelist+=i
-	folder_list = [i for i in folder_list if os.path.basename(i)[:3] in filelist]
+	image_list = [i for i in folder_list if os.path.basename(i)[:3] in filelist]
+	label_list=[0]*len(image_list)
 
-	if level =='video':
-		label_list=[dataset!='Original']*len(folder_list)
-		return folder_list,label_list
-	for i in range(len(folder_list)):
-		images_temp=sorted(glob(folder_list[i]+'/*.png'))
-		if n_frames<len(images_temp):
-			images_temp=[images_temp[round(i)] for i in np.linspace(0,len(images_temp)-1,n_frames)]
-		image_list+=images_temp
-		if dataset=='Original':
-			label_list+=[0]*len(images_temp)
-		else:
-			label_list+=[1]*len(images_temp)
 
+	if dataset=='all':
+		fakes=['Deepfakes','Face2Face','FaceSwap','NeuralTextures']
+	else:
+		fakes=[dataset]
+
+	folder_list=[]
+	for fake in fakes:
+		fake_path=f'data/FaceForensics++/manipulated_sequences/{fake}/raw/videos/'
+		folder_list_all=sorted(glob(fake_path+'*'))
+		folder_list+=[i for i in folder_list_all if os.path.basename(i)[:3] in filelist]
+	label_list+=[1]*len(folder_list)
+	image_list+=folder_list
 	return image_list,label_list
 
 

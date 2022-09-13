@@ -37,7 +37,7 @@ def main(args):
     if args.dataset == 'FFIW':
         video_list,target_list=init_ffiw()
     elif args.dataset == 'FF':
-        video_list,target_list=init_ff('raw')
+        video_list,target_list=init_ff()
     elif args.dataset == 'DFD':
         video_list,target_list=init_dfd()
     elif args.dataset == 'DFDC':
