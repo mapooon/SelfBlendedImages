@@ -14,6 +14,8 @@ For commercial use:
 
 
 # Changelog
+13.9.2022: Added an inference code for FF++  
+
 10.9.2022: Added a weight trained on c23 of FF++  
 
 19.5.2022: Released training/inference code and a pretrained weight.
