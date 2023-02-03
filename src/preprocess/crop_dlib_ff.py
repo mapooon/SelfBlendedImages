@@ -77,7 +77,7 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('-d',dest='dataset',choices=['DeepFakeDetection_original','DeepFakeDetection','FaceShifter','Face2Face','Deepfakes','FaceSwap','NeuralTextures','Original','Celeb-real','Celeb-synthesis','YouTube-real','DFDC','DFDCP'])
     parser.add_argument('-c',dest='comp',choices=['raw','c23','c40'],default='raw')
-    parser.add_argument('-n',dest='num_frames',type=int,default=8)
+    parser.add_argument('-n',dest='num_frames',type=int,default=32)
     args=parser.parse_args()
     if args.dataset=='Original':
         dataset_path='data/FaceForensics++/original_sequences/youtube/{}/'.format(args.comp)

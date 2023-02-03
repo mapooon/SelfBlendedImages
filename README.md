@@ -14,6 +14,8 @@ For commercial use:
 
 
 # Changelog
+3.2.2023: Fixed bug in preprocessing code. We recommend that those who have any problems in reproducing the experimental results try again from the preprocessing.
+
 13.9.2022: Added an inference code for FF++  
 
 10.9.2022: Added a weight trained on c23 of FF++  
@@ -129,7 +131,7 @@ CUDA_VISIBLE_DEVICES=* python3 src/train_sbi.py \
 src/configs/sbi/base.json \
 -n sbi
 ```
-Top five checkpoints will be saved in `./output/` folder. As descrived in our paper, we use the latest one for evaluations.
+Top five checkpoints will be saved in `./output/` folder. As described in our paper, we use the latest one for evaluations.
 
 # Citation
 If you find our work useful for your research, please consider citing our paper:
