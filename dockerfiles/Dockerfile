@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.4.1-runtime-ubuntu20.04
+FROM nvidia/cuda:11.4.3-runtime-ubuntu20.04
 
 
 RUN apt-get -y update && \
